@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
 
-function App() {
+// let data = '[This is from the data]'
+
+const App = () => {
+  const [count, setCount] = useState(0); 
+
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
+  }; 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={containerStyle}>
+
+      <h1 style={{color:'red'}} >Counter: {count}</h1>
+      <div>
+      <button style={{backgroundColor:'skyblue'}} onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      </div>
+
+      <br></br>
+      {/* <p>show {data}</p> */}
+      {/* <Tryfun/> */}
+
     </div>
   );
-}
+};
 
 export default App;
+
+//component trial
+// function Tryfun() {
+//   return (<h3>this text is from a component with value</h3>)
+// }
